@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -17,8 +17,10 @@
                 <li><a href="#about">О парке</a></li>
                 <li><a href="#hikes">Походы</a></li>
                 <li><a href="#reviews">Отзывы</a></li>
+                <li><a href="#booking">Контакты</a></li>
             </ul>
         </nav>
+        <a href="#booking">Заказать тур</a>
     </header>
 
     <main id="main-content">
@@ -32,6 +34,7 @@
                 <dt>Опыт команды</dt><dd>Более 10 лет</dd>
                 <dt>Протяжённость троп</dt><dd>82 км</dd>
             </dl>
+            <p><a href="#booking">Заказать тур</a></p>
             <a href="#about">Листайте вниз — о парке</a>
         </section>
 
@@ -46,7 +49,7 @@
             <h2>Ближайшие походы</h2>
             <p>Пример расписания из учебного макета. Даты не являются предложением бронирования.</p>
             <article>
-                <h3>Первое знакомство</h3>
+                <h3>Первое знакомство с Ергаками: лёгкий поход к озёрам и скалам</h3>
                 <img src="assets/images/first-hike.jpg" width="232" height="190" alt="Скалистая вершина над лесом и озером." loading="lazy">
                 <p>С <time datetime="2027-06-12">12 июня</time> по <time datetime="2027-06-14">14 июня 2027 года</time>.</p>
                 <p>Лёгкий поход к самым известным достопримечательностям Ергаков. Идеально для первого знакомства с парком.</p>
@@ -54,6 +57,7 @@
                     <dt>Продолжительность</dt><dd>3 дня</dd>
                     <dt>Сложность</dt><dd>Лёгкий</dd>
                 </dl>
+                <a href="#booking" data-tour="first">Выбрать поход «Первое знакомство»</a>
             </article>
             <article>
                 <h3>Озёра Ергаков</h3>
@@ -64,6 +68,7 @@
                     <dt>Продолжительность</dt><dd>5 дней</dd>
                     <dt>Сложность</dt><dd>Средний</dd>
                 </dl>
+                <a href="#booking" data-tour="lakes">Выбрать поход «Озёра Ергаков»</a>
             </article>
             <article>
                 <h3>В сердце гор</h3>
@@ -74,6 +79,7 @@
                     <dt>Продолжительность</dt><dd>7 дней</dd>
                     <dt>Сложность</dt><dd>Средний</dd>
                 </dl>
+                <a href="#booking" data-tour="mountains">Выбрать поход «В сердце гор»</a>
             </article>
         </section>
 
@@ -104,6 +110,33 @@
             </figure>
         </section>
 
+        <section id="booking">
+            <h2>Готовы к приключению?</h2>
+            <p>Оставьте заявку, и мы подберём для вас идеальный поход в Ергаки.</p>
+            <p id="form-note">Учебная форма: данные не отправляются организатору. Для проверки используйте вымышленные имя и телефон.</p>
+            <form id="booking-form" aria-describedby="form-note">
+                <p>
+                    <label for="full-name">Ваше имя (обязательно)</label><br>
+                    <input type="text" id="full-name" name="full_name" autocomplete="name" required>
+                </p>
+                <p>
+                    <label for="phone">Номер телефона (обязательно)</label><br>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+                </p>
+                <p>
+                    <label for="tour-choice">Поход</label><br>
+                    <select id="tour-choice" name="tour">
+                        <option value="help">Помогите выбрать</option>
+                        <option value="first">Первое знакомство</option>
+                        <option value="lakes">Озёра Ергаков</option>
+                        <option value="mountains">В сердце гор</option>
+                    </select>
+                </p>
+                <button type="submit" id="send-request" disabled>Оставить заявку</button>
+                <noscript><p>Для проверки учебной формы включите JavaScript.</p></noscript>
+                <p id="form-result" role="status"></p>
+            </form>
+        </section>
     </main>
 
     <footer>
@@ -112,11 +145,35 @@
             <ul>
                 <li><a href="#about">О парке</a></li>
                 <li><a href="#hikes">Походы</a></li>
+                <li><a href="#booking">Контакты</a></li>
             </ul>
         </nav>
         <p>© 2027 Вершина. Макет сайта природного парка Ергаки.</p>
         <!-- Социальные и юридические ссылки добавляются после получения их адресов. -->
     </footer>
 
+    <script>
+        const bookingForm = document.getElementById('booking-form');
+        const formResult = document.getElementById('form-result');
+        const tourChoice = document.getElementById('tour-choice');
+
+        document.querySelectorAll('[data-tour]').forEach(function (link) {
+            link.addEventListener('click', function () {
+                tourChoice.value = link.dataset.tour;
+                formResult.textContent = '';
+            });
+        });
+
+        bookingForm.addEventListener('input', function () {
+            formResult.textContent = '';
+        });
+
+        bookingForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            formResult.textContent =
+                'Обязательные поля заполнены. Это учебная проверка: заявка не отправлена.';
+        });
+        document.getElementById('send-request').disabled = false;
+    </script>
 </body>
 </html>
