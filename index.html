@@ -1,11 +1,179 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Personal Expense Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Походы в Ергаки — Вершина</title>
+    <style>
+        img { max-width: 100%; height: auto; }
+    </style>
 </head>
 <body>
-    <h1>Personal Expense Tracker</h1>
-    <p>Учебный проект для контроля личных расходов.</p>
+    <a href="#main-content">Перейти к содержимому</a>
+    <header>
+        <p>Вершина</p>
+        <nav aria-label="Основная навигация">
+            <ul>
+                <li><a href="#about">О парке</a></li>
+                <li><a href="#hikes">Походы</a></li>
+                <li><a href="#reviews">Отзывы</a></li>
+                <li><a href="#booking">Контакты</a></li>
+            </ul>
+        </nav>
+        <a href="#booking">Заказать тур</a>
+    </header>
+
+    <main id="main-content">
+        <section>
+            <h1>Природный парк Ергаки</h1>
+            <p>Горы, кристально чистые озёра и настоящие приключения.</p>
+            <img src="assets/images/ergaki-hero.jpg" width="793" alt="Путешественник смотрит на озеро среди хвойного леса и гор.">
+            <p>Сведения из учебного макета:</p>
+            <dl>
+                <dt>Маршруты</dt><dd>5 маршрутов</dd>
+                <dt>Опыт команды</dt><dd>Более 10 лет</dd>
+                <dt>Протяжённость троп</dt><dd>82 км</dd>
+            </dl>
+            <p><a href="#booking">Заказать тур</a></p>
+            <a href="#about">Листайте вниз — о парке</a>
+        </section>
+
+        <section id="about">
+            <h2>Откройте Ергаки</h2>
+            <p>Ергаки — это уникальный природный парк в сердце Саян. Гранитные пики, озёра, водопады и нетронутая природа создают идеальные условия для походов и перезагрузки.</p>
+            <img src="assets/images/ergaki-panorama.jpg" width="408" height="266" alt="Остроконечные скалы и хвойный лес отражаются в горном озере." loading="lazy">
+            <p><a href="#expectations">Узнать больше</a></p>
+        </section>
+
+        <section id="hikes">
+            <h2>Ближайшие походы</h2>
+            <p>Пример расписания из учебного макета. Даты не являются предложением бронирования.</p>
+            <article>
+                <h3>Первое знакомство с Ергаками: лёгкий поход к озёрам и скалам</h3>
+                <img src="assets/images/first-hike.jpg" width="232" height="190" alt="Скалистая вершина над лесом и озером." loading="lazy">
+                <p>С <time datetime="2027-06-12">12 июня</time> по <time datetime="2027-06-14">14 июня 2027 года</time>.</p>
+                <p>Лёгкий поход к самым известным достопримечательностям Ергаков. Идеально для первого знакомства с парком.</p>
+                <dl>
+                    <dt>Продолжительность</dt><dd>3 дня</dd>
+                    <dt>Сложность</dt><dd>Лёгкий</dd>
+                </dl>
+                <a href="#booking" data-tour="first">Выбрать поход «Первое знакомство»</a>
+            </article>
+            <article>
+                <h3>Озёра Ергаков</h3>
+                <img src="assets/images/ergaki-lakes.jpg" width="232" height="190" alt="Горное озеро с небольшими островками и скалами на дальнем берегу." loading="lazy">
+                <p>С <time datetime="2027-07-03">3 июля</time> по <time datetime="2027-07-07">7 июля 2027 года</time>.</p>
+                <p>Маршрут по живописным горным озёрам с ночёвками в палатках. Максимум природы и впечатлений.</p>
+                <dl>
+                    <dt>Продолжительность</dt><dd>5 дней</dd>
+                    <dt>Сложность</dt><dd>Средний</dd>
+                </dl>
+                <a href="#booking" data-tour="lakes">Выбрать поход «Озёра Ергаков»</a>
+            </article>
+            <article>
+                <h3>В сердце гор</h3>
+                <img src="assets/images/mountain-route.jpg" width="232" height="190" alt="Высокий скальный пик освещён тёплым светом на закате." loading="lazy">
+                <p>С <time datetime="2027-08-14">14 августа</time> по <time datetime="2027-08-20">20 августа 2027 года</time>.</p>
+                <p>Насыщенный маршрут к главным вершинам Ергаков. Для тех, кто хочет увидеть больше и испытать себя.</p>
+                <dl>
+                    <dt>Продолжительность</dt><dd>7 дней</dd>
+                    <dt>Сложность</dt><dd>Средний</dd>
+                </dl>
+                <a href="#booking" data-tour="mountains">Выбрать поход «В сердце гор»</a>
+            </article>
+        </section>
+
+        <section id="expectations">
+            <h2>Что вас ждёт</h2>
+            <ul>
+                <li><h3>Горы</h3><p>Величественные пики и панорамные виды.</p></li>
+                <li><h3>Озёра</h3><p>Кристально чистые горные озёра.</p></li>
+                <li><h3>Ночёвки в палатках</h3><p>Настоящая атмосфера походной жизни.</p></li>
+                <li><h3>Опытный гид</h3><p>Маршруты с профессионалами.</p></li>
+            </ul>
+        </section>
+
+        <section id="reviews">
+            <h2>Отзывы участников</h2>
+            <p>Примеры отзывов из учебного макета.</p>
+            <figure>
+                <blockquote>
+                    <p>«Ергаки — это любовь с первого взгляда! Потрясающие виды, отличная организация и душевная компания. Обязательно поеду ещё раз!»</p>
+                </blockquote>
+                <figcaption>Анна, Москва. Поход «Озёра Ергаков», <time datetime="2024-07">июль 2024 года</time>.</figcaption>
+            </figure>
+            <figure>
+                <blockquote>
+                    <p>«Невероятные места, которые невозможно забыть. Гид — настоящий профессионал, всё было продумано до мелочей. Ергаки покорили!»</p>
+                </blockquote>
+                <figcaption>Сергей, Новосибирск. Поход «В сердце гор», <time datetime="2024-08">август 2024 года</time>.</figcaption>
+            </figure>
+        </section>
+
+        <section id="booking">
+            <h2>Готовы к приключению?</h2>
+            <p>Оставьте заявку, и мы подберём для вас идеальный поход в Ергаки.</p>
+            <p id="form-note">Учебная форма: данные не отправляются организатору. Для проверки используйте вымышленные имя и телефон.</p>
+            <form id="booking-form" aria-describedby="form-note">
+                <p>
+                    <label for="full-name">Ваше имя (обязательно)</label><br>
+                    <input type="text" id="full-name" name="full_name" autocomplete="name" required>
+                </p>
+                <p>
+                    <label for="phone">Номер телефона (обязательно)</label><br>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+                </p>
+                <p>
+                    <label for="tour-choice">Поход</label><br>
+                    <select id="tour-choice" name="tour">
+                        <option value="help">Помогите выбрать</option>
+                        <option value="first">Первое знакомство</option>
+                        <option value="lakes">Озёра Ергаков</option>
+                        <option value="mountains">В сердце гор</option>
+                    </select>
+                </p>
+                <button type="submit" id="send-request" disabled>Оставить заявку</button>
+                <noscript><p>Для проверки учебной формы включите JavaScript.</p></noscript>
+                <p id="form-result" role="status"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Вершина — ближе к настоящему.</p>
+        <nav aria-label="Навигация в подвале">
+            <ul>
+                <li><a href="#about">О парке</a></li>
+                <li><a href="#hikes">Походы</a></li>
+                <li><a href="#booking">Контакты</a></li>
+            </ul>
+        </nav>
+        <p>© 2027 Вершина. Макет сайта природного парка Ергаки.</p>
+        <!-- Социальные и юридические ссылки добавляются после получения их адресов. -->
+    </footer>
+
+    <script>
+        const bookingForm = document.getElementById('booking-form');
+        const formResult = document.getElementById('form-result');
+        const tourChoice = document.getElementById('tour-choice');
+
+        document.querySelectorAll('[data-tour]').forEach(function (link) {
+            link.addEventListener('click', function () {
+                tourChoice.value = link.dataset.tour;
+                formResult.textContent = '';
+            });
+        });
+
+        bookingForm.addEventListener('input', function () {
+            formResult.textContent = '';
+        });
+
+        bookingForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            formResult.textContent =
+                'Обязательные поля заполнены. Это учебная проверка: заявка не отправлена.';
+        });
+        document.getElementById('send-request').disabled = false;
+    </script>
 </body>
 </html>
